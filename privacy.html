@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Esnaf Cep</title>
+<meta name="description" content="How Esnaf Cep handles your data, in plain language.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Privacy — Esnaf Cep">
+<meta property="og:site_name" content="Esnaf Cep">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4ead6; --paper2:#efe2c8; --card:#fbf5e8; --ink:#2b2118; --soft:#5d4f40; --faint:#8a7a66;
+  --red:#cf4128; --red-d:#a8321e; --tea:#b85a1c; --leaf:#3d7a4d; --sun:#f0b43c; --line:#2b2118;
+  --hand:"Caveat",cursive; --head:"Fraunces",Georgia,serif; --body:"Nunito",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+html{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font:18px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* kâğıt dokusu */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .3 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.05;letter-spacing:-.015em}
+.hand{font-family:var(--hand);font-weight:700}
+::selection{background:var(--sun)}
+
+/* tente */
+.tente{position:relative;height:64px;background:repeating-linear-gradient(90deg,var(--red) 0 56px,#f8efdc 56px 112px);transform-origin:top;animation:sway 6s ease-in-out infinite}
+.tente::after{content:"";position:absolute;left:0;right:0;top:100%;height:22px;
+  background:radial-gradient(circle at 28px 0,var(--red) 27px,transparent 28px) 0 0/112px 22px repeat-x,
+             radial-gradient(circle at 84px 0,#f8efdc 27px,transparent 28px) 0 0/112px 22px repeat-x;
+  filter:drop-shadow(0 4px 0 rgba(43,33,24,.12))}
+@keyframes sway{50%{transform:scaleY(1.04)}}
+.bar{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:1120px;margin:0 auto;z-index:2}
+.logo{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:2.5px solid var(--line);border-radius:14px;padding:6px 14px 6px 8px;font:800 19px var(--body);text-decoration:none;box-shadow:3px 3px 0 var(--line);transform:rotate(-1.5deg)}
+.logo svg{width:28px;height:28px}
+.navlink{background:var(--card);border:2.5px solid var(--line);border-radius:999px;padding:7px 16px;font-weight:800;font-size:15px;text-decoration:none;box-shadow:3px 3px 0 var(--line);transition:transform .15s,box-shadow .15s}
+.navlink:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--line)}
+
+/* butonlar */
+.btn{display:inline-flex;align-items:center;gap:10px;font:800 18px var(--body);text-decoration:none;padding:15px 26px;border-radius:16px;border:2.5px solid var(--line);background:var(--red);color:#fff8ec;box-shadow:4px 4px 0 var(--line);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--line)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}
+.btn.alt{background:var(--card);color:var(--ink)}
+
+/* hero */
+.hero{padding:70px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hello{font-family:var(--hand);font-size:30px;color:var(--red);margin:0 0 6px;transform:rotate(-2deg);display:inline-block}
+h1{font-size:clamp(46px,6.4vw,84px);font-weight:800}
+.under{position:relative;white-space:nowrap}
+.under svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.42em;overflow:visible}
+.under path{fill:none;stroke:var(--sun);stroke-width:9;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s .5s cubic-bezier(.6,0,.3,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lead{font-size:clamp(19px,1.7vw,22px);color:var(--soft);max-width:30ch;margin:26px 0 32px}
+.lead b{color:var(--ink)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.note-arrow{display:flex;align-items:flex-start;gap:6px;margin-top:22px;font-family:var(--hand);font-size:25px;color:var(--leaf);transform:rotate(-1.5deg)}
+.note-arrow svg{width:46px;height:40px;flex:none;margin-top:-4px}
+
+/* çay + telefon çizimi */
+.scene{position:relative;justify-self:center;width:min(100%,460px)}
+.scene svg{width:100%;height:auto;overflow:visible}
+.ink{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.steam path{fill:none;stroke:var(--faint);stroke-width:3;stroke-linecap:round;opacity:0;animation:steam 3.6s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:1.2s}.steam path:nth-child(3){animation-delay:2.4s}
+@keyframes steam{0%{opacity:0;transform:translateY(10px)}30%{opacity:.8}100%{opacity:0;transform:translateY(-34px)}}
+.bub{transform-box:fill-box;transform-origin:center;opacity:0;animation:bub 7s ease-in-out infinite}
+.bub.b2{animation-delay:1.1s}.bub.b3{animation-delay:2.2s}
+@keyframes bub{0%,4%{opacity:0;transform:scale(.6)}10%,80%{opacity:1;transform:scale(1)}90%,100%{opacity:0;transform:scale(.9)}}
+.wob{animation:wob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom center}
+@keyframes wob{50%{transform:rotate(-1.6deg)}}
+
+/* kayan tabela */
+.tabela-wrap{overflow:hidden;padding:30px 0 10px;margin-top:20px}
+.tabela{margin:0;background:var(--ink);color:var(--paper);border-top:3px solid var(--line);border-bottom:3px solid var(--line);overflow:hidden;transform:rotate(-1deg);margin-left:-20px;margin-right:-20px}
+.tabela .track{display:flex;width:max-content;animation:kay 40s linear infinite;padding:14px 0}
+.tabela span{font:700 26px var(--head);padding:0 22px;white-space:nowrap}
+.tabela span:nth-child(odd){color:var(--sun)}
+@keyframes kay{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.kicker{font-family:var(--hand);font-size:28px;color:var(--red);display:inline-block;transform:rotate(-1.5deg);margin-bottom:6px}
+h2{font-size:clamp(36px,4.6vw,58px);font-weight:800;max-width:18ch}
+.sub{color:var(--soft);font-size:20px;max-width:46ch;margin:18px 0 0}
+
+/* tanıdık geldi mi — notlar */
+.notes{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:56px}
+.note{position:relative;background:#fff3b8;padding:30px 22px 26px;min-height:190px;font-family:var(--hand);font-size:29px;line-height:1.15;box-shadow:0 14px 20px -12px rgba(43,33,24,.35);transform:rotate(var(--r));transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.note:hover{transform:rotate(0) scale(1.04)}
+.note::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(240,225,190,.75);border:1px solid rgba(43,33,24,.08);transform:rotate(-3deg)}
+.note:nth-child(2){background:#ffd9c7}.note:nth-child(3){background:#d8ecd5}.note:nth-child(4){background:#d9e6f5}
+.note small{display:block;margin-top:14px;font:600 14px var(--body);color:var(--faint)}
+.answer-line{margin-top:44px;font-size:22px;max-width:40ch}
+.answer-line b{background:linear-gradient(transparent 60%,rgba(240,180,60,.55) 60%)}
+
+/* hizmetler */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.svc{position:relative;background:var(--card);border:2.5px solid var(--line);border-radius:22px;padding:34px 32px 30px;box-shadow:6px 6px 0 var(--line)}
+.svc .ico{width:70px;height:70px;margin-bottom:18px}
+.svc h3{font-size:32px;font-weight:800;margin-bottom:12px}
+.svc p{color:var(--soft);margin:0 0 16px}
+.svc ul{list-style:none;margin:0;padding:0}
+.svc li{position:relative;padding-left:34px;margin:10px 0;font-weight:600}
+.svc li::before{content:"";position:absolute;left:0;top:4px;width:22px;height:22px;border:2.5px solid var(--line);border-radius:7px;background:var(--sun)}
+.svc li::after{content:"";position:absolute;left:6px;top:8px;width:9px;height:5px;border-left:3px solid var(--line);border-bottom:3px solid var(--line);transform:rotate(-45deg)}
+.svc .stamp{position:absolute;top:22px;right:22px;font:700 22px var(--hand);color:var(--leaf);border:2.5px solid var(--leaf);border-radius:10px;padding:0 10px;transform:rotate(6deg)}
+.svc.red .stamp{color:var(--red);border-color:var(--red)}
+
+/* adımlar */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px;position:relative}
+.steps::before{content:"";position:absolute;left:12%;right:12%;top:52px;border-top:3px dashed rgba(43,33,24,.35)}
+.step{position:relative;text-align:center}
+.num{position:relative;width:104px;height:104px;margin:0 auto 18px;border-radius:50%;background:var(--card);border:2.5px solid var(--line);display:grid;place-items:center;box-shadow:4px 4px 0 var(--line)}
+.num svg{width:52px;height:52px}
+.num b{position:absolute;top:-10px;right:-8px;width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff8ec;border:2.5px solid var(--line);font:800 17px/31px var(--body)}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{color:var(--soft);margin:0 auto;max-width:26ch}
+
+/* dürüst olalım */
+.honest{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.letter{position:relative;background:var(--card);border:2.5px solid var(--line);border-radius:6px;padding:40px 38px;box-shadow:6px 6px 0 var(--line);transform:rotate(-1deg)}
+.letter::before{content:"";position:absolute;inset:0;border-radius:4px;background:repeating-linear-gradient(transparent 0 33px,rgba(61,122,77,.16) 33px 34px);pointer-events:none}
+.letter p{position:relative;margin:0 0 16px;font-size:19px}
+.letter .sign{font-family:var(--hand);font-size:38px;color:var(--red);margin:6px 0 0;line-height:1}
+.promises{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:16px}
+.promises li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:4px 4px 0 var(--line)}
+.promises svg{width:52px;height:52px}
+.promises b{display:block;font-size:19px}
+.promises span{color:var(--soft);font-size:16.5px}
+
+/* english */
+.en{background:var(--paper2);border-top:2.5px solid var(--line);border-bottom:2.5px solid var(--line)}
+.en .wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;padding-top:70px;padding-bottom:70px}
+.en h2{font-size:34px}
+.en p{margin:0 0 14px;color:var(--soft);font-size:17px}
+.en p:last-child{margin:0}
+
+/* son */
+.last{text-align:center;padding:120px 0 100px}
+.last h2{margin:0 auto;max-width:none;font-size:clamp(42px,6vw,76px)}
+.last .sub{margin:20px auto 34px}
+.glass-sm{width:70px;margin:0 auto 18px}
+footer{border-top:2.5px solid var(--line);padding:26px 0 40px;color:var(--soft);font-size:15px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* girişler */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.notes .note.rv{transform:translateY(-30px) rotate(calc(var(--r) * 3))}
+.notes .note.rv.in{transform:rotate(var(--r))}
+.notes .note.rv.in:hover{transform:rotate(0) scale(1.04)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (max-width:960px){
+  .hero-grid,.honest{grid-template-columns:1fr}
+  .scene{max-width:400px}
+  .notes{grid-template-columns:1fr 1fr}
+  .services{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:40px}
+  .steps::before{display:none}
+  .en .wrap{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .bar{padding:0 12px}
+  .navlink{display:none}
+  .hero{padding-top:50px}
+  .notes{grid-template-columns:1fr;gap:30px}
+  .note{min-height:0}
+  .svc{padding:28px 22px}
+  .svc .stamp{position:static;display:inline-block;margin-bottom:12px}
+  .letter{padding:30px 22px}
+  section{padding:80px 0}
+  .tabela span{font-size:21px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.notes .note.rv{opacity:1!important;transform:rotate(var(--r,0))!important}
+  .under path{stroke-dashoffset:0}
+  .bub{opacity:1}
+}
+
+.doc{max-width:760px;margin:0 auto;padding:70px 24px 90px}
+.doc h1{font-size:clamp(40px,6vw,64px);margin-bottom:10px}
+.doc h2{font-size:28px;margin:44px 0 10px;max-width:none}
+.doc p,.doc li{color:var(--soft)}
+.doc ul{padding-left:22px}
+.doc li{margin:6px 0}
+.doc .box{background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:4px 4px 0 var(--line);margin-top:26px}
+</style>
+</head>
+<body>
+<header>
+  <div class="tente" aria-hidden="true"></div>
+  <div class="bar">
+    <a class="logo" href="en.html">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><defs><clipPath id="kemerlogo"><rect x="-20" y="-20" width="140" height="98"/></clipPath></defs><g transform="translate(0 2)"><g clip-path="url(#kemerlogo)"><path d="M26.13,83.60 A35,35 0 1 1 73.87,83.60" fill="none" stroke="#cf4128" stroke-width="10"/><path d="M28.12,80.54 A33,33 0 0 1 83.33,48.67" fill="none" stroke="#cf4128" stroke-width="9.2"/><circle cx="83.33" cy="48.67" r="4.6" fill="#cf4128"/></g></g></svg>
+      Esnaf Cep
+    </a>
+    <a class="navlink" href="en.html">Home</a>
+  </div>
+</header>
+<main class="doc">
+  <span class="kicker">in plain words</span>
+  <h1>Privacy</h1>
+  <p>This page explains, in plain language, how Esnaf Cep handles your data.</p>
+
+  <h2>What we receive</h2>
+  <ul>
+    <li>Messages and document photos you send us via WhatsApp or email.</li>
+    <li>If you use the review assistant, the reviews on the Google Business Profile you authorise.</li>
+    <li>Your phone number or email address, so we can reply.</li>
+  </ul>
+
+  <h2>What we use it for</h2>
+  <p>Only for the job you asked for: explaining a letter, summarising your reviews, drafting replies. We never sell your data or use it for advertising.</p>
+
+  <h2>Personal data is masked</h2>
+  <p>Names, national ID numbers and addresses in documents are masked before the text is sent to the AI model.</p>
+
+  <h2>Services we use</h2>
+  <p>We work with an AI provider based outside Türkiye to read letters and reviews, so masked text may be processed on servers outside Türkiye. For the review assistant we use Google's official Business Profile connection, only with your consent.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>We aim to keep data no longer than needed. To have your data deleted, just write to us.</p>
+
+  <div class="box">
+    <p style="margin:0"><b style="color:var(--ink)">Note:</b> This policy is updated when needed. For questions, write to us.</p>
+  </div>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:merhaba@esnafcep.app">merhaba@esnafcep.app</a></p>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Esnaf Cep · İzmir, Türkiye</span>
+    <span><a href="en.html">Home</a> · <a href="gizlilik.html" hreflang="tr">Türkçe</a></span>
+  </div>
+</footer>
+</body>
+</html>
